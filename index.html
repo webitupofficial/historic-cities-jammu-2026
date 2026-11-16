@@ -45,24 +45,10 @@
 <section class="hero" id="home">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 
-  <!-- jharokha arch that draws itself on load -->
-  <svg class="arch" viewBox="0 0 600 760" data-depth="0.02" aria-hidden="true">
-    <defs>
-      <linearGradient id="gArch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3cd86"/><stop offset=".65" stop-color="#e8b45a" stop-opacity=".3"/><stop offset="1" stop-color="#e8b45a" stop-opacity="0"/></linearGradient>
-      <radialGradient id="gGlow" cx=".5" cy=".4" r=".62"><stop offset="0" stop-color="#ff8a3d" stop-opacity=".36"/><stop offset=".5" stop-color="#c2456b" stop-opacity=".15"/><stop offset="1" stop-color="#c2456b" stop-opacity="0"/></radialGradient>
-    </defs>
-    <path class="arch-fill" fill="url(#gGlow)" d="M40 760V310C40 170 170 80 300 24c130 56 260 146 260 286v450z"/>
-    <path class="arch-line" pathLength="1" fill="none" stroke="url(#gArch)" stroke-width="1.6" d="M40 760V310C40 170 170 80 300 24c130 56 260 146 260 286v450"/>
-    <path class="arch-line l2" pathLength="1" fill="none" stroke="url(#gArch)" stroke-width="1" d="M78 760V320C78 202 188 124 300 72c112 52 222 130 222 248v440"/>
-    <circle class="arch-dot" cx="300" cy="12" r="4.5" fill="#f3cd86"/>
-  </svg>
-
-  <div class="embers" aria-hidden="true">
-    <i style="--x:8%;--s:3px;--t:15s;--dl:-2s"></i><i style="--x:17%;--s:2px;--t:19s;--dl:-9s"></i><i style="--x:26%;--s:4px;--t:17s;--dl:-13s"></i><i style="--x:37%;--s:2px;--t:22s;--dl:-5s"></i><i style="--x:46%;--s:3px;--t:16s;--dl:-11s"></i><i style="--x:55%;--s:2px;--t:20s;--dl:-1s"></i><i style="--x:63%;--s:4px;--t:18s;--dl:-15s"></i><i style="--x:72%;--s:2px;--t:23s;--dl:-7s"></i><i style="--x:81%;--s:3px;--t:16s;--dl:-4s"></i><i style="--x:90%;--s:2px;--t:21s;--dl:-12s"></i>
-  </div>
+  <div class="sun" data-depth="0.02" aria-hidden="true"><div class="sun-ring"></div><div class="sun-ring r2"></div><div class="sun-core"></div></div>
 
   <div class="hero-inner">
-    <p class="eyebrow rise" style="--d:0"><span class="dot"></span> Historic Cities Series · A national initiative led by NIUA</p>
+    <p class="eyebrow rise" style="--d:0">Historic Cities Series · A national initiative led by NIUA</p>
     <h1 class="hero-title">
       <span class="line"><span class="rise" style="--d:1">Jammu</span></span>
       <span class="line sub"><span class="rise" style="--d:2">Edition <em>2026</em></span></span>
@@ -181,13 +167,13 @@
       <figure class="frame float f3" style="--r:-2deg"><div class="frame-art a3"></div><figcaption>Workshop in session</figcaption></figure>
       <figure class="frame low float f1" style="--r:4deg"><div class="frame-art a4"></div><figcaption>Along the Tawi</figcaption></figure>
       <figure class="frame float f2" style="--r:-3deg"><div class="frame-art a5"></div><figcaption>Stories being recorded</figcaption></figure>
-      <figure class="frame low float f3" style="--r:2deg"><div class="frame-art a6"></div><figcaption>Our volunteers</figcaption></figure>
+      <figure class="frame low float f3" style="--r:2deg"><div class="frame-art a6"></div><figcaption>Behind the scenes</figcaption></figure>
       <figure class="frame float f1" style="--r:-4deg" aria-hidden="true"><div class="frame-art a1"></div><figcaption>Mubarak Mandi Palace</figcaption></figure>
       <figure class="frame low float f2" style="--r:3deg" aria-hidden="true"><div class="frame-art a2"></div><figcaption>Old City lanes</figcaption></figure>
       <figure class="frame float f3" style="--r:-2deg" aria-hidden="true"><div class="frame-art a3"></div><figcaption>Workshop in session</figcaption></figure>
       <figure class="frame low float f1" style="--r:4deg" aria-hidden="true"><div class="frame-art a4"></div><figcaption>Along the Tawi</figcaption></figure>
       <figure class="frame float f2" style="--r:-3deg" aria-hidden="true"><div class="frame-art a5"></div><figcaption>Stories being recorded</figcaption></figure>
-      <figure class="frame low float f3" style="--r:2deg" aria-hidden="true"><div class="frame-art a6"></div><figcaption>Our volunteers</figcaption></figure>
+      <figure class="frame low float f3" style="--r:2deg" aria-hidden="true"><div class="frame-art a6"></div><figcaption>Behind the scenes</figcaption></figure>
     </div>
   </div>
 </section>
@@ -222,23 +208,12 @@
     <div class="people core">
       <article class="person reveal"><span class="avatar">MA</span><h4>Dr. Mrinalini Atrey</h4><p class="role">City Coordinator</p><p class="muted">Co-Counsellor, ICOMOS India · Secretary General, ICICH-ICOMOS</p></article>
       <article class="person reveal"><span class="avatar">KA</span><h4>Ar. Kushagra Anand</h4><p class="role">City Co-Coordinator</p><p class="muted">Practicing Architect · Founder, Jammu Heritage</p></article>
-      <article class="person reveal"><span class="avatar">AF</span><h4>Aatika Fareed</h4><p class="role">Project Coordination</p><p class="muted">ICOMOS India</p></article>
     </div>
 
     <h3 class="group-title reveal">Contributors</h3>
     <div class="people">
-      <article class="person sm reveal"><span class="avatar">AB</span><h4>Anupamma Bhasin</h4><p class="role">Secretarial Incharge</p></article>
-      <article class="person sm reveal"><span class="avatar">JS</span><h4>Jayita Sharma</h4><p class="role">Media &amp; Storytelling Session Incharge</p></article>
       <article class="person sm reveal"><span class="avatar">PS</span><h4>Prem Singh</h4><p class="role">Digital Curator &amp; Project Incharge</p></article>
-      <article class="person sm reveal"><span class="avatar">SA</span><h4>Sabreena Ayoub</h4><p class="role">Photography Incharge &amp; Creatives</p></article>
-      <article class="person sm reveal"><span class="avatar">SB</span><h4>Shivam Bali</h4><p class="role">PR &amp; Walk Incharge</p></article>
-      <article class="person sm reveal"><span class="avatar">SM</span><h4>Siya Mahajan</h4><p class="role">Exhibition Incharge</p></article>
     </div>
-
-    <h3 class="group-title reveal">Volunteers</h3>
-    <ul class="volunteers reveal">
-      <li>Aadil Latief</li><li>Ankush Kumar</li><li>Khushwinder Kour</li><li>Shariq Raza Wani</li><li>Sohaib Bhatt</li><li>Stuti Abbi</li><li>Tanyia Bhagat</li>
-    </ul>
   </div>
 </section>
 

@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Historic Cities Series 2026 — Jammu Edition</title>
-<meta name="description" content="Historic Cities Series 2026, Jammu Edition: hands-on workshops, a photography contest and community storytelling celebrating Jammu's living heritage.">
+<meta name="description" content="Historic Cities Series 2026, Jammu Edition: hands-on workshops and community storytelling celebrating Jammu's living heritage.">
 <meta name="theme-color" content="#0d0a12">
 <meta property="og:title" content="Historic Cities Series 2026 — Jammu Edition">
-<meta property="og:description" content="Workshops, photography and storytelling celebrating Jammu's living heritage.">
+<meta property="og:description" content="Workshops and community storytelling celebrating Jammu's living heritage.">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,6 +19,8 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="progress" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+<div class="spot" id="spot" aria-hidden="true"></div>
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
@@ -27,13 +29,13 @@
     <span class="brand-text"><b>Historic Cities</b><i>Jammu · 2026</i></span>
   </a>
   <nav class="nav-links" id="navLinks" aria-label="Primary">
-    <a href="#gallery">Glimpses</a>
+    <a href="#themes">Themes</a>
     <a href="#workshops">Workshops</a>
-    <a href="#contest">Contest</a>
+    <a href="#gallery">Glimpses</a>
     <a href="#storytelling">Stories</a>
     <a href="#team">Team</a>
   </nav>
-  <a class="btn btn-sm nav-cta" href="#workshops">Join a workshop</a>
+  <a class="btn btn-sm nav-cta magnet" href="#workshops">Join a workshop</a>
   <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks"><span></span><span></span></button>
 </header>
 
@@ -42,7 +44,22 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="home">
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
-  <div class="sun" data-depth="0.02" aria-hidden="true"><div class="sun-ring"></div><div class="sun-ring r2"></div><div class="sun-core"></div></div>
+
+  <!-- jharokha arch that draws itself on load -->
+  <svg class="arch" viewBox="0 0 600 760" data-depth="0.02" aria-hidden="true">
+    <defs>
+      <linearGradient id="gArch" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f3cd86"/><stop offset=".65" stop-color="#e8b45a" stop-opacity=".3"/><stop offset="1" stop-color="#e8b45a" stop-opacity="0"/></linearGradient>
+      <radialGradient id="gGlow" cx=".5" cy=".4" r=".62"><stop offset="0" stop-color="#ff8a3d" stop-opacity=".36"/><stop offset=".5" stop-color="#c2456b" stop-opacity=".15"/><stop offset="1" stop-color="#c2456b" stop-opacity="0"/></radialGradient>
+    </defs>
+    <path class="arch-fill" fill="url(#gGlow)" d="M40 760V310C40 170 170 80 300 24c130 56 260 146 260 286v450z"/>
+    <path class="arch-line" pathLength="1" fill="none" stroke="url(#gArch)" stroke-width="1.6" d="M40 760V310C40 170 170 80 300 24c130 56 260 146 260 286v450"/>
+    <path class="arch-line l2" pathLength="1" fill="none" stroke="url(#gArch)" stroke-width="1" d="M78 760V320C78 202 188 124 300 72c112 52 222 130 222 248v440"/>
+    <circle class="arch-dot" cx="300" cy="12" r="4.5" fill="#f3cd86"/>
+  </svg>
+
+  <div class="embers" aria-hidden="true">
+    <i style="--x:8%;--s:3px;--t:15s;--dl:-2s"></i><i style="--x:17%;--s:2px;--t:19s;--dl:-9s"></i><i style="--x:26%;--s:4px;--t:17s;--dl:-13s"></i><i style="--x:37%;--s:2px;--t:22s;--dl:-5s"></i><i style="--x:46%;--s:3px;--t:16s;--dl:-11s"></i><i style="--x:55%;--s:2px;--t:20s;--dl:-1s"></i><i style="--x:63%;--s:4px;--t:18s;--dl:-15s"></i><i style="--x:72%;--s:2px;--t:23s;--dl:-7s"></i><i style="--x:81%;--s:3px;--t:16s;--dl:-4s"></i><i style="--x:90%;--s:2px;--t:21s;--dl:-12s"></i>
+  </div>
 
   <div class="hero-inner">
     <p class="eyebrow rise" style="--d:0"><span class="dot"></span> Historic Cities Series · A national initiative led by NIUA</p>
@@ -50,10 +67,10 @@
       <span class="line"><span class="rise" style="--d:1">Jammu</span></span>
       <span class="line sub"><span class="rise" style="--d:2">Edition <em>2026</em></span></span>
     </h1>
-    <p class="hero-lede rise" style="--d:3">Discover Jammu's living heritage through hands-on workshops, photography and community storytelling — from the magnificent Mubarak Mandi Palace to the vibrant Old City with its ancient temples, traditional markets and timeless stories.</p>
+    <p class="hero-lede rise" style="--d:3">Discover Jammu's living heritage through hands-on workshops and community storytelling — from the magnificent Mubarak Mandi Palace to the vibrant Old City with its ancient temples, traditional markets and timeless stories.</p>
     <div class="hero-cta rise" style="--d:4">
-      <a class="btn" href="#workshops">Explore the workshops <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      <a class="btn btn-ghost" href="#contest">Photography contest</a>
+      <a class="btn magnet" href="#workshops">Explore the workshops <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="btn btn-ghost magnet" href="#storytelling">Share your story</a>
     </div>
   </div>
 
@@ -73,19 +90,26 @@
       <linearGradient id="gHill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2140"/><stop offset="1" stop-color="#1b1122"/></linearGradient>
       <linearGradient id="gCity" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4b2a3c"/><stop offset="1" stop-color="#170f1d"/></linearGradient>
     </defs>
-    <g class="sky-l1" data-depth="0.015"><path fill="url(#gHill)" opacity=".75" d="M-40 230 170 150l150 52L520 86l84 46 88-64 90 58 82-42 180 108 180-52 256 76v110H-40z"/></g>
-    <g class="sky-l2" data-depth="0.03" fill="url(#gCity)">
-      <use href="#spire" x="150" y="52"/><use href="#spire" x="205" y="78" transform="scale(1)"/><use href="#spire" x="100" y="92"/>
+    <g data-depth="0.015"><path fill="url(#gHill)" opacity=".75" d="M-40 230 170 150l150 52L520 86l84 46 88-64 90 58 82-42 180 108 180-52 256 76v110H-40z"/></g>
+    <g data-depth="0.03" fill="url(#gCity)">
+      <use href="#spire" x="150" y="52"/><use href="#spire" x="205" y="78"/><use href="#spire" x="100" y="92"/>
       <use href="#dome" x="330" y="76"/><rect x="394" y="150" width="150" height="110"/><use href="#dome" x="544" y="76"/>
       <path d="M410 260v-70q0-16 14-16t14 16v70zM456 260v-70q0-16 14-16t14 16v70zM502 260v-70q0-16 14-16t14 16v70z" fill="#0d0a12" opacity=".55"/>
       <use href="#spire" x="700" y="30"/><use href="#spire" x="760" y="70"/><use href="#spire" x="648" y="80"/><use href="#spire" x="812" y="98"/>
       <use href="#dome" x="960" y="96"/><rect x="1024" y="170" width="110" height="90"/><use href="#spire" x="1160" y="64"/><use href="#spire" x="1214" y="96"/>
-      <use href="#dome" x="1300" y="110"/><rect x="0" y="236" width="1440" height="90"/>
+      <use href="#dome" x="1300" y="110"/><rect x="-40" y="236" width="1520" height="90"/>
     </g>
+    <g class="lights" fill="#f3cd86"><circle cx="424" cy="205" r="2"/><circle cx="470" cy="205" r="2"/><circle cx="516" cy="205" r="2"/><circle cx="722" cy="150" r="1.6"/><circle cx="1079" cy="210" r="2"/><circle cx="172" cy="170" r="1.6"/><circle cx="1182" cy="180" r="1.6"/><circle cx="990" cy="200" r="1.6"/></g>
     <g class="river" fill="#3fb7a8"><use href="#wave" y="236" opacity=".16" class="w1"/><use href="#wave" y="256" opacity=".22" class="w2"/></g>
   </svg>
 
-  <a class="scroll-cue" href="#partners" aria-label="Scroll down"><span></span></a>
+  <!-- EDIT: at-a-glance bar -->
+  <dl class="hero-bar rise" style="--d:6">
+    <div><dt>Edition</dt><dd>2026</dd></div>
+    <div><dt>City</dt><dd>Jammu, J&amp;K</dd></div>
+    <div><dt>Programme</dt><dd>Workshops · Storytelling</dd></div>
+    <div><dt>Dates</dt><dd>To be announced</dd></div>
+  </dl>
 </section>
 
 <!-- ============ PARTNERS ============ -->
@@ -100,66 +124,70 @@
   </div>
 </section>
 
-<!-- ============ GLIMPSES ============ -->
-<section class="section" id="gallery">
+<!-- ============ THEMES ============ -->
+<section class="section" id="themes">
   <div class="wrap">
     <header class="head reveal">
-      <p class="kicker">Event glimpses</p>
-      <h2>Moments from the <em>workshops &amp; sessions</em></h2>
-      <p>A look at the memorable moments from our workshops and sessions. The 2026 album will appear here as the edition unfolds.</p>
+      <p class="kicker">The idea</p>
+      <h2>One city, read through <em>three themes</em></h2>
+      <p>The Historic Cities Series is a national initiative led by the National Institute of Urban Affairs. The Jammu Edition explores the city's layered urban identity through three threads.</p>
     </header>
-    <!-- EDIT: to add a photo, put <img src="images/your-photo.webp" alt="..." loading="lazy"> inside a .frame-art div -->
-    <div class="frames">
-      <figure class="frame float f1 reveal" style="--r:-5deg"><div class="frame-art a1"></div><figcaption>Mubarak Mandi Palace</figcaption></figure>
-      <figure class="frame float f2 reveal" style="--r:3deg"><div class="frame-art a2"></div><figcaption>Old City lanes</figcaption></figure>
-      <figure class="frame tall float f3 reveal" style="--r:-2deg"><div class="frame-art a3"></div><figcaption>Workshop in session</figcaption></figure>
-      <figure class="frame float f2 reveal" style="--r:4deg"><div class="frame-art a4"></div><figcaption>Closing remarks from the coordinators</figcaption></figure>
-      <figure class="frame float f1 reveal" style="--r:-3deg"><div class="frame-art a5"></div><figcaption>Our volunteers</figcaption></figure>
+    <!-- EDIT: one-line theme descriptions -->
+    <div class="pillars">
+      <article class="card pillar tilt reveal"><div class="card-glow"></div>
+        <svg class="glyph g-river" viewBox="0 0 120 120" aria-hidden="true"><path d="M6 44q18-16 36 0t36 0 36 0"/><path d="M6 62q18-16 36 0t36 0 36 0"/><path d="M6 80q18-16 36 0t36 0 36 0"/></svg>
+        <span class="pillar-num">01</span><h3>Riverine Memory</h3><p class="muted">The Tawi, and the life that has gathered along its banks.</p></article>
+      <article class="card pillar tilt reveal"><div class="card-glow"></div>
+        <svg class="glyph g-plural" viewBox="0 0 120 120" aria-hidden="true"><g><circle cx="60" cy="42" r="26"/><circle cx="44" cy="70" r="26"/><circle cx="76" cy="70" r="26"/></g></svg>
+        <span class="pillar-num">02</span><h3>Plural Heritage</h3><p class="muted">Temples, shrines, palaces and bazaars — many traditions sharing one city.</p></article>
+      <article class="card pillar tilt reveal"><div class="card-glow"></div>
+        <svg class="glyph g-voice" viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="8"/><circle cx="60" cy="60" r="22"/><circle cx="60" cy="60" r="36"/><circle cx="60" cy="60" r="50"/></svg>
+        <span class="pillar-num">03</span><h3>Community Narratives</h3><p class="muted">The city as told by the people who live in it.</p></article>
     </div>
   </div>
 </section>
 
 <!-- ============ WORKSHOPS ============ -->
 <section class="section section-alt" id="workshops">
-  <div class="wrap">
-    <header class="head reveal">
+  <div class="wrap duo">
+    <header class="head sticky reveal">
       <p class="kicker">Workshops</p>
       <h2>Learn Jammu's heritage <em>by doing</em></h2>
       <p>Hands-on workshops are at the heart of the 2026 edition. Topics, venues and dates will be announced here.</p>
     </header>
-    <!-- EDIT: workshops. Copy an <article> block to add more; replace the "to be announced" text with real details. -->
-    <div class="sessions">
-      <article class="card session workshop tilt reveal"><div class="card-glow"></div><span class="num">I</span><p class="tag">Workshop 01</p><h3>Title to be announced</h3>
-        <dl class="facts"><div><dt>Venue</dt><dd>To be announced</dd></div><div><dt>Date &amp; time</dt><dd>To be announced</dd></div></dl>
-        <span class="btn btn-soon" aria-disabled="true">Registration opens soon</span></article>
-      <article class="card session workshop tilt reveal"><div class="card-glow"></div><span class="num">II</span><p class="tag">Workshop 02</p><h3>Title to be announced</h3>
-        <dl class="facts"><div><dt>Venue</dt><dd>To be announced</dd></div><div><dt>Date &amp; time</dt><dd>To be announced</dd></div></dl>
-        <span class="btn btn-soon" aria-disabled="true">Registration opens soon</span></article>
-      <article class="card session workshop tilt reveal"><div class="card-glow"></div><span class="num">III</span><p class="tag">Workshop 03</p><h3>Title to be announced</h3>
-        <dl class="facts"><div><dt>Venue</dt><dd>To be announced</dd></div><div><dt>Date &amp; time</dt><dd>To be announced</dd></div></dl>
-        <span class="btn btn-soon" aria-disabled="true">Registration opens soon</span></article>
-    </div>
+    <!-- EDIT: workshops. Copy an <li> block to add more; replace the "to be announced" text with real details. -->
+    <ol class="rows">
+      <li class="row reveal"><span class="row-num">01</span><div class="row-body"><h3>Title to be announced</h3><p class="muted">Venue to be announced · Date &amp; time to be announced</p></div><span class="soon">Opening soon</span></li>
+      <li class="row reveal"><span class="row-num">02</span><div class="row-body"><h3>Title to be announced</h3><p class="muted">Venue to be announced · Date &amp; time to be announced</p></div><span class="soon">Opening soon</span></li>
+      <li class="row reveal"><span class="row-num">03</span><div class="row-body"><h3>Title to be announced</h3><p class="muted">Venue to be announced · Date &amp; time to be announced</p></div><span class="soon">Opening soon</span></li>
+    </ol>
   </div>
 </section>
 
-<!-- ============ CONTEST ============ -->
-<section class="section" id="contest">
-  <div class="wrap split">
-    <div class="split-art reveal" aria-hidden="true">
-      <div class="lens float f1" data-depth="0.04"><i></i><i></i><i></i></div>
-      <div class="snap s1 float f2"></div>
-      <div class="snap s2 float f3"></div>
-    </div>
-    <div class="split-text reveal">
-      <p class="kicker">Heritage photography contest</p>
-      <h2>Capture the <em>spirit of Jammu</em></h2>
-      <p>Are you passionate about photography and Jammu's vibrant heritage? The Historic Cities Series presents the Jammu Edition as part of the National Exhibition on Historic Cities, where winning entries from each city are exhibited nationally.</p>
-      <p>We invite college students (undergraduate, postgraduate or above, in any stream) and amateur photographers to document the rich cultural heritage of Jammu City and create a visual archive for everyone to see.</p>
-      <dl class="dates">
-        <div><dt>Submission deadline</dt><dd>To be announced</dd></div>
-        <div><dt>Winners announced</dt><dd>To be announced</dd></div>
-      </dl>
-      <span class="btn btn-soon" aria-disabled="true">Entries open soon</span>
+<!-- ============ GLIMPSES ============ -->
+<section class="section" id="gallery">
+  <div class="wrap">
+    <header class="head reveal">
+      <p class="kicker">Event glimpses</p>
+      <h2>Moments from the <em>workshops &amp; sessions</em></h2>
+      <p>The 2026 album will appear here as the edition unfolds.</p>
+    </header>
+  </div>
+  <!-- EDIT: to add a photo, put <img src="images/your-photo.webp" alt="..." loading="lazy"> inside a .frame-art div (and in its duplicate in the second set) -->
+  <div class="strip reveal">
+    <div class="strip-track">
+      <figure class="frame float f1" style="--r:-4deg"><div class="frame-art a1"></div><figcaption>Mubarak Mandi Palace</figcaption></figure>
+      <figure class="frame low float f2" style="--r:3deg"><div class="frame-art a2"></div><figcaption>Old City lanes</figcaption></figure>
+      <figure class="frame float f3" style="--r:-2deg"><div class="frame-art a3"></div><figcaption>Workshop in session</figcaption></figure>
+      <figure class="frame low float f1" style="--r:4deg"><div class="frame-art a4"></div><figcaption>Along the Tawi</figcaption></figure>
+      <figure class="frame float f2" style="--r:-3deg"><div class="frame-art a5"></div><figcaption>Stories being recorded</figcaption></figure>
+      <figure class="frame low float f3" style="--r:2deg"><div class="frame-art a6"></div><figcaption>Our volunteers</figcaption></figure>
+      <figure class="frame float f1" style="--r:-4deg" aria-hidden="true"><div class="frame-art a1"></div><figcaption>Mubarak Mandi Palace</figcaption></figure>
+      <figure class="frame low float f2" style="--r:3deg" aria-hidden="true"><div class="frame-art a2"></div><figcaption>Old City lanes</figcaption></figure>
+      <figure class="frame float f3" style="--r:-2deg" aria-hidden="true"><div class="frame-art a3"></div><figcaption>Workshop in session</figcaption></figure>
+      <figure class="frame low float f1" style="--r:4deg" aria-hidden="true"><div class="frame-art a4"></div><figcaption>Along the Tawi</figcaption></figure>
+      <figure class="frame float f2" style="--r:-3deg" aria-hidden="true"><div class="frame-art a5"></div><figcaption>Stories being recorded</figcaption></figure>
+      <figure class="frame low float f3" style="--r:2deg" aria-hidden="true"><div class="frame-art a6"></div><figcaption>Our volunteers</figcaption></figure>
     </div>
   </div>
 </section>
@@ -225,6 +253,7 @@
 
 <!-- ============ FOOTER ============ -->
 <footer class="footer">
+  <p class="wordmark" aria-hidden="true">Jammu</p>
   <div class="wrap footer-grid">
     <div>
       <p class="footer-brand">Historic Cities Series 2026<br><em>Jammu Edition</em></p>
@@ -232,7 +261,7 @@
     </div>
     <div>
       <p class="footer-h">Explore</p>
-      <p><a href="#workshops">Workshops</a> · <a href="#contest">Contest</a> · <a href="#storytelling">Stories</a> · <a href="#team">Team</a></p>
+      <p><a href="#themes">Themes</a> · <a href="#workshops">Workshops</a> · <a href="#gallery">Glimpses</a> · <a href="#storytelling">Stories</a> · <a href="#team">Team</a></p>
     </div>
     <div>
       <p class="footer-h">Contact</p>

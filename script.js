@@ -28,8 +28,31 @@
   links.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
   addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
+  // --- split section headlines into words so they slide up one by one ---
+  if (!reduced) {
+    $$('.reveal h2, h2.reveal').forEach(h => {
+      let n = 0;
+      const split = node => {
+        [...node.childNodes].forEach(c => {
+          if (c.nodeType === 3) {
+            const frag = document.createDocumentFragment();
+            c.textContent.split(/(\s+)/).forEach(part => {
+              if (!part) return;
+              if (/^\s+$/.test(part)) { frag.append(' '); return; }
+              const w = document.createElement('span'); w.className = 'w';
+              const i = document.createElement('span'); i.textContent = part; i.style.setProperty('--w', n++);
+              w.append(i); frag.append(w);
+            });
+            c.replaceWith(frag);
+          } else if (c.nodeType === 1) split(c);
+        });
+      };
+      h.setAttribute('aria-label', h.textContent.trim());
+      split(h);
+    });
+  }
+
   // --- scroll reveals (staggered among siblings) ---
-  $$('.stops li').forEach((li, i) => li.style.setProperty('--n', i));
   const revealEls = $$('.reveal');
   revealEls.forEach(el => {
     const sibs = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
@@ -56,19 +79,25 @@
 
   if (reduced || !finePointer) return;
 
-  // --- pointer parallax for floating layers ---
+  // --- pointer parallax for floating layers + soft spotlight that follows the cursor ---
   $$('[data-depth]').forEach(el => el.style.setProperty('--k', el.dataset.depth));
-  let px = 0, py = 0, tx = 0, ty = 0, raf = 0;
+  const spot = document.getElementById('spot');
+  let px = 0, py = 0, tx = 0, ty = 0, sx = innerWidth / 2, sy = innerHeight / 2, mx = sx, my = sy, raf = 0;
   const step = () => {
     px += (tx - px) * 0.08; py += (ty - py) * 0.08;
+    sx += (mx - sx) * 0.14; sy += (my - sy) * 0.14;
     root.style.setProperty('--px', px.toFixed(1));
     root.style.setProperty('--py', py.toFixed(1));
-    raf = Math.abs(tx - px) + Math.abs(ty - py) > 0.2 ? requestAnimationFrame(step) : 0;
+    spot.style.transform = `translate3d(${sx.toFixed(1)}px,${sy.toFixed(1)}px,0)`;
+    raf = Math.abs(tx - px) + Math.abs(ty - py) + Math.abs(mx - sx) + Math.abs(my - sy) > 0.3 ? requestAnimationFrame(step) : 0;
   };
   addEventListener('pointermove', e => {
-    tx = e.clientX - innerWidth / 2; ty = e.clientY - innerHeight / 2;
+    mx = e.clientX; my = e.clientY;
+    tx = mx - innerWidth / 2; ty = my - innerHeight / 2;
+    spot.classList.add('on');
     if (!raf) raf = requestAnimationFrame(step);
   }, { passive: true });
+  document.addEventListener('pointerleave', () => spot.classList.remove('on'));
 
   // --- 3D tilt + cursor glow on cards ---
   $$('.tilt').forEach(card => {
@@ -83,5 +112,15 @@
     card.addEventListener('pointerleave', () => {
       card.style.setProperty('--rx', '0deg'); card.style.setProperty('--ry', '0deg');
     });
+  });
+
+  // --- magnetic buttons ---
+  $$('.magnet').forEach(btn => {
+    btn.addEventListener('pointermove', e => {
+      const r = btn.getBoundingClientRect();
+      btn.style.setProperty('--tx', ((e.clientX - r.left - r.width / 2) * 0.22).toFixed(1) + 'px');
+      btn.style.setProperty('--ty', ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + 'px');
+    });
+    btn.addEventListener('pointerleave', () => { btn.style.setProperty('--tx', '0px'); btn.style.setProperty('--ty', '0px'); });
   });
 })();

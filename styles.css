@@ -317,3 +317,25 @@ h3{font:500 1.55rem/1.2 var(--serif);letter-spacing:-.01em}
   .w>span{transform:none}
   .embers{display:none}
 }
+
+/* ---------- 2026 programme ---------- */
+.tgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.theme{padding:28px;min-height:250px;display:flex;flex-direction:column;justify-content:flex-end}
+.theme h3{font-size:1.4rem;margin-bottom:10px}
+.theme .muted{font-size:.92rem}
+.theme:nth-child(3n+2) .pillar-num{color:var(--teal)}.theme:nth-child(3n) .pillar-num{color:var(--rose)}
+.theme .pillar-num{font-size:2.6rem;line-height:1;margin-bottom:auto;padding-bottom:28px}
+.row .meta{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.row h3{margin-bottom:8px}
+.when{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:999px;background:linear-gradient(135deg,var(--gold2),var(--saffron));color:#1a1208;font-size:.78rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.when.soon{background:none}
+.groups{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px}
+.group{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:24px;border-radius:22px;border:1px solid var(--line);background:rgba(255,255,255,.035);transition:transform .45s var(--ease),border-color .3s,opacity .9s var(--ease)}
+.group:hover{border-color:rgba(232,180,90,.45)}
+.group-letter{display:grid;place-items:center;width:52px;height:52px;border-radius:16px;font:italic 500 1.6rem var(--serif);color:#1a1208;background:linear-gradient(135deg,var(--gold2),var(--saffron))}
+.group:nth-child(3n+2) .group-letter{background:linear-gradient(135deg,#a6e6dc,var(--teal))}
+.group:nth-child(3n) .group-letter{background:linear-gradient(135deg,#f1a7b9,var(--rose))}
+.focus{font:500 1.05rem/1.35 var(--serif);margin-bottom:12px}
+.names{display:flex;flex-wrap:wrap;gap:6px}
+.names li{padding:5px 12px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;font-weight:600}
+@media (max-width:600px){.row .when{grid-column:2;justify-self:start}.groups{grid-template-columns:1fr}.theme{min-height:0}}

@@ -339,3 +339,7 @@ h3{font:500 1.55rem/1.2 var(--serif);letter-spacing:-.01em}
 .names{display:flex;flex-wrap:wrap;gap:6px}
 .names li{padding:5px 12px;border-radius:999px;border:1px solid var(--line);font-size:.84rem;font-weight:600}
 @media (max-width:600px){.row .when{grid-column:2;justify-self:start}.groups{grid-template-columns:1fr}.theme{min-height:0}}
+.gname{font:500 1.1rem/1.35 var(--serif);margin-bottom:10px}
+.gwork{display:grid;gap:8px;color:var(--muted);font-size:.88rem;line-height:1.5}
+.gwork li{padding-left:14px;position:relative}
+.gwork li::before{content:"";position:absolute;left:0;top:.62em;width:5px;height:5px;border-radius:50%;background:var(--gold)}

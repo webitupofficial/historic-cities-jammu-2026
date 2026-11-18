@@ -367,3 +367,8 @@ h3{font:500 1.55rem/1.2 var(--serif);letter-spacing:-.01em}
 @media (max-width:420px){.gnames{grid-template-columns:1fr}}
 .nav-links a.nav-radio{color:var(--gold)}
 .nav-links a.nav-radio::before{content:"";display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 8px #ff4d4d;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
+.marquee li.logo{padding:0 14px}
+.marquee li.logo::after{display:none}
+.marquee li.logo img{display:block;height:64px;width:auto;padding:10px 18px;border-radius:16px;background:#fbf6ec;box-shadow:0 10px 24px -14px #000;box-sizing:content-box;transition:transform .35s var(--ease)}
+.marquee li.logo:hover img{transform:translateY(-4px)}
+@media (max-width:600px){.marquee li.logo img{height:48px;padding:8px 14px}}

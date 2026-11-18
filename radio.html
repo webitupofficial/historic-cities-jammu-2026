@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dogri Radio — Historic Cities Jammu 2026</title>
+<meta name="description" content="Dogri Radio: a retro radio playlist of Dogri folk and Jammu songs, from the Historic Cities Series 2026, Jammu Edition.">
+<meta name="theme-color" content="#120c10">
+<meta property="og:title" content="Dogri Radio — Historic Cities Jammu 2026">
+<meta property="og:description" content="Tune in to Dogri folk and Jammu songs on a retro radio.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.ytimg.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Manrope:wght@400;500;600;700&family=VT323&display=swap">
+<link rel="stylesheet" href="radio.css">
+</head>
+<body>
+<header class="top">
+  <a class="back" href="/" aria-label="Back to Historic Cities Jammu 2026">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
+    <span><b>Historic Cities</b><i>Jammu · 2026</i></span>
+  </a>
+  <p class="onair" id="onair"><span></span>Off air</p>
+</header>
+
+<main>
+  <section class="intro">
+    <p class="kicker">Dogri Radio · FM Jammu</p>
+    <h1>Khand meethe, <em>geet</em> meethe</h1>
+    <p class="lede">Sixteen Dogri songs of Jammu — folk, devotion, the city and its people. Turn the dial, pick a station, press play.</p>
+  </section>
+
+  <!-- ============ THE RADIO ============ -->
+  <section class="radio" id="radio" aria-label="Radio player">
+    <div class="cabinet">
+      <div class="brand-plate"><span>Duggar</span><i>Model 26 · Jammu</i></div>
+
+      <div class="face">
+        <div class="grille" aria-hidden="true"><div class="cone"></div></div>
+
+        <div class="screen-wrap">
+          <div class="screen" id="screen">
+            <button class="poster" id="poster" type="button" aria-label="Play">
+              <img id="posterImg" alt="" width="480" height="360" decoding="async">
+              <span class="big-play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+            </button>
+            <div id="yt"></div>
+          </div>
+          <div class="lcd" aria-live="polite">
+            <div class="lcd-row"><span id="lcdFreq">FM 88.0</span><span id="lcdTime">00:00 / 00:00</span></div>
+            <div class="lcd-title"><span id="lcdTitle">Tune in to Dogri Radio</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- dial -->
+      <div class="dial-wrap">
+        <div class="dial" id="dial">
+          <div class="scale" aria-hidden="true"></div>
+          <div class="nums" id="nums" aria-hidden="true"></div>
+          <div class="stations" id="stations" role="listbox" aria-label="Stations"></div>
+          <div class="needle" id="needle" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="progress" id="progress" role="slider" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><i id="bar"></i></div>
+
+      <!-- controls -->
+      <div class="controls">
+        <div class="knob-box">
+          <div class="knob" id="tune" role="slider" tabindex="0" aria-label="Tuning — turn to change station" aria-valuemin="1" aria-valuemax="16" aria-valuenow="1"><i></i></div>
+          <span>Tune</span>
+        </div>
+
+        <div class="keys">
+          <button class="key" id="prev" type="button" aria-label="Previous station"><svg viewBox="0 0 24 24"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg></button>
+          <button class="key play" id="play" type="button" aria-label="Play"><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><svg class="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg></button>
+          <button class="key" id="next" type="button" aria-label="Next station"><svg viewBox="0 0 24 24"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg></button>
+          <button class="key toggle" id="shuffle" type="button" aria-pressed="false" aria-label="Shuffle"><svg viewBox="0 0 24 24"><path d="M4 7h3l10 10h3M4 17h3l3-3M14 10l3-3h3M18 4l3 3-3 3M18 14l3 3-3 3"/></svg></button>
+        </div>
+
+        <div class="vu" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+
+        <div class="knob-box">
+          <div class="knob vol" id="vol" role="slider" tabindex="0" aria-label="Volume" aria-valuemin="0" aria-valuemax="100" aria-valuenow="80"><i></i></div>
+          <span>Volume</span>
+        </div>
+      </div>
+      <p class="hint">Drag or scroll the knobs · <kbd>Space</kbd> play · <kbd>←</kbd><kbd>→</kbd> change station</p>
+    </div>
+  </section>
+
+  <!-- ============ STATION LIST ============ -->
+  <section class="list" aria-labelledby="listTitle">
+    <div class="list-head">
+      <h2 id="listTitle">Station list</h2>
+      <p>Songs stream from YouTube. Each card opens the original video too.</p>
+    </div>
+    <ol class="tracks" id="tracks"></ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>Part of the <a href="/">Historic Cities Series 2026 — Jammu Edition</a>. All songs belong to their artists and labels and play from their official YouTube uploads.</p>
+</footer>
+
+<script src="radio.js" defer></script>
+</body>
+</html>

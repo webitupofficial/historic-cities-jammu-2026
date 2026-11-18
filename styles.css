@@ -365,3 +365,5 @@ h3{font:500 1.55rem/1.2 var(--serif);letter-spacing:-.01em}
 .gwork{margin-top:auto;padding-top:18px;border-top:1px solid var(--line)}
 @media (max-width:860px){.groups{grid-template-columns:1fr}.group{padding:26px 24px}}
 @media (max-width:420px){.gnames{grid-template-columns:1fr}}
+.nav-links a.nav-radio{color:var(--gold)}
+.nav-links a.nav-radio::before{content:"";display:inline-block;width:7px;height:7px;margin-right:7px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 8px #ff4d4d;vertical-align:1px;animation:pulse 1.6s ease-in-out infinite}
